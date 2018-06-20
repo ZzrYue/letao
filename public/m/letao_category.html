@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 字体图标样式文件 -->
+    <link rel="stylesheet" href="./assets/fa/css/font-awesome.css">
+    <!-- mui样式文件 -->
+    <link rel="stylesheet" href="./assets/mui/css/mui.css">
+    <!-- 公共样式文件 -->
+    <link rel="stylesheet" href="./css/letao_css/common.css">
+    <!-- 当前页样式文件 -->
+    <link rel="stylesheet" href="./css/letao_css/category.css">
+    <title>老子做的乐淘网</title>
+</head>
+
+<body>
+    <div class="layout">
+        <!-- 头部 -->
+        <div class="lt_header">
+            <span class="lt_hleft fa fa-arrow-left"></span>
+            <div class="lt_hcenter">乐淘云购</div>
+            <span class="lt_hright fa fa-search"></span>
+        </div>
+        <div class="lt_main">
+            <div class="cate_left">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul class="cate_left_ul">
+
+                        </ul>
+                        <!-- 一级分类模板 -->
+                        <script type="text/template" id="cateList">
+                            <%for(var i=0 ;i<rows.length;i++){%> 
+                                <li>
+                                    <a href="javascript:;" class="<%= i == 0 ?  'cate_active'  : '' %>" data-id="<%=rows[i].id%>">
+                                        <%=rows[i].categoryName%>
+                                    </a>
+                                </li>
+                                <%}%>
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="cate_right">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="./images/brand1.png" alt="">
+                                    <p>耐克</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./images/brand1.png" alt="">
+                                    <p>耐克</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./images/brand1.png" alt="">
+                                    <p>耐克</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./images/brand1.png" alt="">
+                                    <p>耐克</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./images/brand1.png" alt="">
+                                    <p>耐克</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./images/brand1.png" alt="">
+                                    <p>耐克</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./images/brand1.png" alt="">
+                                    <p>耐克</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./images/brand1.png" alt="">
+                                    <p>耐克</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div class="lt_footer">
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="javascript:;">
+                        <span class="fa fa-bars"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="fa fa-shopping-cart"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="fa fa-user"></span>
+                        <p>个人中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="./assets/mui/js/mui.js"></script>
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
+    <script src="./js/letao-js/common.js"></script>
+    <script src="./js/letao-js/category.js"></script>
+</body>
+
+</html>

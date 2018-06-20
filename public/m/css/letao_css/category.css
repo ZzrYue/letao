@@ -1,0 +1,62 @@
+.lt_main .cate_left {
+  width: 100px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.lt_main .cate_left ul {
+  width: 100%;
+}
+
+.lt_main .cate_left ul > li {
+  width: 100%;
+}
+
+.lt_main .cate_left ul > li > a {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  display: block;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  color: #aaa;
+}
+
+.lt_main .cate_left ul > li > a.cate_active {
+  border-right: none;
+  color: #f00;
+  background-color: #fff;
+}
+
+.lt_main .cate_right {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+}
+
+.lt_main .cate_right ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.lt_main .cate_right ul > li {
+  width: 25%;
+  text-align: center;
+}
+
+.lt_main .cate_right ul > li > a {
+  display: block;
+  width: 100%;
+}
+
+.lt_main .cate_right ul > li > a > img {
+  width: 100%;
+}
+/*# sourceMappingURL=category.css.map */

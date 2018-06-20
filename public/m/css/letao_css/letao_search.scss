@@ -1,0 +1,46 @@
+.lt_main {
+    >.lt_parent {
+        .lt_search {
+            margin-top: 10px;
+            padding: 0 10px;
+            >form {
+                position: relative;
+                >.search_input {
+                    background: #fff;
+                    border: 1px solid #069;
+                    text-align: left;
+                    font-size: 12px;
+                }
+                >.search_btn {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 60px;
+                    height: 34px;
+                    background: #069;
+                    text-align: center;
+                    line-height: 34px;
+                    color: #fff;
+                    font-size: 12px;
+                    border-radius: 0 6px 6px 0;
+                }
+            }
+        }
+        .oder_by{
+            width:100%;
+            padding:5px 10px;
+            background-color: #ccc;
+            display:flex;
+            text-align: center;
+            >a{
+                flex:1;
+                color:#333;
+                font-size:13px;
+                &.active{
+                    color:#f00;
+                }
+            }
+        }
+    }
+
+}

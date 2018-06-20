@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   width: 100%;
   height: 100%;
   max-width: 640px;
@@ -67,31 +66,6 @@ body {
   position: relative;
 }
 
-.layout .lt_main .lt-nav {
-  width: 100%;
-}
-
-.layout .lt_main .lt-nav > ul {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 10px;
-  list-style: none;
-}
-
-.layout .lt_main .lt-nav > ul > li {
-  width: 33.33%;
-}
-
-.layout .lt_main .lt-nav > ul > li > a {
-  display: block;
-  width: 100%;
-}
-
-.layout .lt_main .lt-nav > ul > li > a > img {
-  display: block;
-  width: 100%;
-}
-
 .layout .lt_main .lt_product {
   width: 100%;
 }
@@ -109,6 +83,7 @@ body {
   text-align: center;
   border: 1px solid #ccc;
   box-shadow: 0 0 3px #aaa;
+  margin-top: 10px;
 }
 
 .layout .lt_main .lt_product > ul > li > a {

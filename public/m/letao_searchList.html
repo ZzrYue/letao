@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 字体图标样式文件 -->
+    <link rel="stylesheet" href="./assets/fa/css/font-awesome.css">
+    <!-- mui样式文件 -->
+    <link rel="stylesheet" href="./assets/mui/css/mui.css">
+    <!-- 公共样式文件 -->
+    <link rel="stylesheet" href="./css/letao_css/common.css">
+    <!-- 当前页样式文件 -->
+    <link rel="stylesheet" href="./css/letao_css/letao_search.css">
+    <title>老子做的乐淘网</title>
+</head>
+
+<body>
+    <div class="layout">
+        <!-- 头部 -->
+        <div class="lt_header">
+            <span class="lt_hleft  fa fa-arrow-left"></span>
+            <div class="lt_hcenter">乐淘云购</div>
+            <span class="lt_hright"></span>
+        </div>
+        <!-- 主体 -->
+        <div class="lt_main">
+            <div class="lt_parent">
+                <div class="mui-scroll-wrapper">
+                    <!--下拉刷新容器-->
+                    <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <!--搜索表单-->
+                            <div class="lt_search">
+                                <form action="javascript:;">
+                                    <input class="search_input" type="search" placeholder="请输入搜索关键字" />
+                                    <a class="search_btn" href="javascript:;">搜索</a>
+                                </form>
+                            </div>
+
+                            <!-- 排序 -->
+                            <div class="oder_by">
+                                <a href="" class="active" data-para="time">上架时间
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                                <a href="" data-para="price">价格
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                                <a href="" data-para="num">销量
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                                <a href="" data-para="comment">评价
+                                    <span class="fa fa-angle-down"></span>
+                                </a>
+                            </div>
+                            <!-- 产品 -->
+                            <div class="lt_product">
+                                <ul>
+                                    <!-- <li>
+                                        <a href="javascript:;">
+                                            <img src="./images/product.jpg" alt="">
+                                            <p class="mui-ellipsis-2">阿迪达斯最牛逼阿迪达斯最牛逼阿迪达斯最牛逼阿迪达斯最牛逼阿迪达斯最牛逼阿迪达斯最牛逼阿迪达斯最牛逼</p>
+                                            <div>
+                                                <i>&yen;500.00</i>
+                                                <del>&yen;2000.00</del>
+                                            </div>
+                                            <button class="mui-btn-blue">去购买</button>
+                                        </a>
+                                    </li> -->
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div class="lt_footer">
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./letao_category.html">
+                        <span class="fa fa-bars"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="fa fa-shopping-cart"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="fa fa-user"></span>
+                        <p>个人中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 模板 -->
+    <script type="text/template" id="templateList">
+        <%for(var i=0;i<data.length;i++){%>
+            <li>
+                <a href="javascript:;">
+                    <%if(data[i].pic.length == 0){
+                        data[i].pic.push({"picAddr":"/mobile/images/none.jpg"});
+                    }%>
+                    <img src="<%=data[i].pic[0].picAddr%>" alt="">
+                    <p class="mui-ellipsis-2"><%=data[i].pic[0].proName%></p>
+                    <div>
+                        <i>&yen;<%=data[i].price%></i>
+                        <del>&yen;<%=data[i].oldPrice%> </del>
+                    </div>
+                    <button class="mui-btn-blue">去购买</button>
+                </a>
+            </li>
+            <% }%>
+    </script>
+    <script src="./assets/mui/js/mui.js"></script>
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
+    <script src="./js/letao-js/common.js"></script>
+    <script src="./js/letao-js/searchList.js"></script>
+</body>
+
+</html>

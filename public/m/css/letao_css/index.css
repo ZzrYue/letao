@@ -1,0 +1,25 @@
+.lt-nav {
+  width: 100%;
+}
+
+.lt-nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  list-style: none;
+}
+
+.lt-nav > ul > li {
+  width: 33.33%;
+}
+
+.lt-nav > ul > li > a {
+  display: block;
+  width: 100%;
+}
+
+.lt-nav > ul > li > a > img {
+  display: block;
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */

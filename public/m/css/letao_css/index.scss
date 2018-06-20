@@ -1,0 +1,20 @@
+.lt-nav {
+    width: 100%;
+    >ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding:0 10px;
+        list-style: none;
+        >li{
+            width:33.33%;
+            >a{
+                display:block;
+                width:100%;
+                >img{
+                display:block;
+                width:100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+    <title>搜索中心</title>
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="assets/mui/css/mui.css" />
+    <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/letao_css/common.css" />
+    <link rel="stylesheet" href="css/letao_css/search.css" />
+</head>
+
+<body>
+    <div class="layout">
+        <!-- 头部 -->
+        <div class="lt_header">
+            <span class="lt_hleft fa fa-arrow-left"></span>
+            <div class="lt_hcenter">乐淘云购</div>
+            <span class="lt_hright"></span>
+        </div>
+
+        <div class="lt_main">
+            <div class="lt_parent">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!--搜索表单-->
+                        <div class="lt_search">
+                            <form action="javascript:;">
+                                <input class="search_input" type="search" placeholder="请输入搜索关键字" focus />
+                                <a class="search_btn" href="javascript:;">搜索</a>
+                            </form>
+                        </div>
+                        <!--搜索历史-->
+                        <div class="lt_history">
+                            <span>搜索历史</span>
+                            <span class="fa fa-trash">清空记录</span>
+                        </div>
+
+                        <ul class="historyData">
+                            <!-- <li>
+                                <a href="">12</a>
+                                <span class="fa fa-close"></span>
+                            </li> -->
+
+                        </ul>
+                        <!-- 模板 -->
+                        <script type="text/template" id="searchList">
+                            <%if(items.length == 0){%>
+                                <li>
+                                    <a href="javascript:;">没有历史搜索记录</a>
+                                </li>
+                            <%}else{%>
+                                <%for(var i=items.length-1;i>=0;i--){%>
+                                        <li data-proName="<%=items[i]%>">
+                                            <a href="./letao_searchList.html?proName=<%=items[i]%>"><%=items[i]%></a>
+                                            <span class="fa fa-close" data-index="<%=i%>"></span>
+                                        </li>
+                                    <%}%>
+                           <% }%>
+                        </script>
+
+                        <p> overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient:
+                            vertical;
+                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus magnam iure fugiat repudiandae
+                            minus aliquam odit earum enim molestias, id ullam sunt cum aperiam excepturi ipsum fuga facilis,
+                            qui quae?</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 底部 -->
+        <div class="lt_footer">
+            <ul>
+                <li class="active">
+                    <a href="./letao_index.html">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./letao_category.html">
+                        <span class="fa fa-bars"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="fa fa-shopping-cart"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="fa fa-user"></span>
+                        <p>个人中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="./assets/mui/js/mui.js"></script>
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
+    <script src="./js/letao-js/common.js"></script>
+    <script src="./js/letao-js/search.js"></script>
+</body>
+
+</html>
