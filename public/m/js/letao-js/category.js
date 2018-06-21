@@ -1,15 +1,5 @@
 $(function(){
-    // 点击返回的时候，回到首页
-    $(".lt_header > .lt_hleft").on("tap",function(){
-        // console.log(123)
-        location.href = "./index.html"
-    });
-
-    // 点击搜索按钮的时候，跳到search.html页面
-    $(".lt_header > .lt_hright").on("tap",function(){
-        // console.log(123)
-        location.href = "./letao_search.html"
-    });
+    
 
     // 页面动态加载左边数据
     $.ajax({
@@ -17,7 +7,7 @@ $(function(){
         dataType:"json",
         url:"/category/queryTopCategory",
         success:function(result){
-            console.log(result)
+            // console.log(result)
             // 调用模板引擎
             var html = template("cateList",result);
             // 写入到页面结构中
@@ -25,11 +15,34 @@ $(function(){
         }
     })
 
+    // 动态加载右边数据
+    function getRightData(data){
+        $.ajax({
+            type:"get",
+            url:" /category/querySecondCategory",
+            data:data,
+            dataType:"json",
+            success:function(result){
+                // console.log(result)
+                var html = template("cateListTemp",result);
+                $(".cate_right_ul").html(html);
+            }
+        })
+    }
+    // 页面加载动态生成页面
+    getRightData({"id":1})
+
+
     // 给左边导航栏添加点击事件
-    $(".cate_left_ul").on("tap","a",function(e){
-        console.log($(this))
-         $(this).parent().siblings("li").removeClass("active")
-        $(this).addClass("active")
-        
+    $(".cate_left_ul").on("tap","li",function(e){
+        // console.log($(this))
+        $(this).siblings().removeClass("cate_active")
+        $(this).addClass("cate_active")
+        // console.log(e.target)
+        // 获取当前点击的li的a标签的id
+        var id = e.target.dataset.id
+        // console.log(id)
+        // 调用右边数据进行数据的渲染
+        getRightData({"id":id})
     })
 })

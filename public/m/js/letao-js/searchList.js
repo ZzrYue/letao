@@ -110,7 +110,7 @@ $(function () {
         obj[desc] = descType;
         // console.log(obj)
         // 调用函数进行页面渲染
-        render(obj);
+        render(obj); 
     })
 
 

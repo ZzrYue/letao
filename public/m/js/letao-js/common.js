@@ -1,3 +1,15 @@
+// 点击返回的时候，回到首页
+$(".lt_header > .lt_hleft").on("tap", function () {
+  // console.log(123)
+  location.href = history.back();
+});
+
+// 点击搜索按钮的时候，跳到search.html页面
+$(".lt_header > .lt_hright").on("tap", function () {
+  // console.log(123)
+  location.href = "./letao_search.html"
+});
+
 // 区域滚动
 mui('.mui-scroll-wrapper').scroll({
   deceleration: 0.0005,
@@ -17,7 +29,7 @@ var lt_local = {
     // console.log(strUrl)
     // 按&符号进行分割
     var arr = strUrl.split("&"); // 返回数组
-  
+
     // 遍历数组，进行二次切割，
     for (var i = 0; i < arr.length; i++) {
       // 然后将截取到的结果在“=”处分切 

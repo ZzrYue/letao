@@ -1,102 +1,173 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
-    <title>商品详情</title>
-    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="assets/mui/css/mui.css"/>
-    <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="css/common.css"/>
-    <link rel="stylesheet" href="css/product.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 字体图标样式文件 -->
+    <link rel="stylesheet" href="./assets/fa/css/font-awesome.css">
+    <!-- mui样式文件 -->
+    <link rel="stylesheet" href="./assets/mui/css/mui.css">
+    <!-- 公共样式文件 -->
+    <link rel="stylesheet" href="./css/letao_css/common.css">
+    <!-- 当前页样式文件 -->
+    <link rel="stylesheet" href="./css/letao_css/product.css">
+    <title>老子做的乐淘网</title>
 </head>
+
 <body>
-<div class="lt_container">
-    <header class="lt_topBar">
-        <a class="btn_left" href="javascript:history.back();"><span class="mui-icon mui-icon-arrowleft"></span></a>
-        <a class="btn_right" href="javascript:;"><span class="mui-icon mui-icon-reload"></span></a>
-        <h3>商品详情</h3>
-    </header>
-    <div class="lt_content">
-        <div class="lt_wrapper">
-            <div class="mui-scroll-wrapper">
-                <div class="mui-scroll">
-                    <div class="loading"><span class="mui-icon mui-icon-spinner"></span></div>
+    <div class="layout">
+        <!-- 头部 -->
+        <div class="lt_header">
+            <span class="lt_hleft  fa fa-arrow-left"></span>
+            <div class="lt_hcenter">商品详情</div>
+            <span class="lt_hright fa fa-home"></span>
+        </div>
+        <!-- 主体 -->
+        <div class="lt_main">
+            <div class="lt_parent">
+                <div class="mui-scroll-wrapper">
+                    <!--下拉刷新容器-->
+                    <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                            <!-- 轮播图 -->
+                            <!-- <div class="mui-slider">
+                                <div class="mui-slider-group mui-slider-loop">
+                            <div class="mui-slider-item mui-slider-item-duplicate">
+                                <a href="#">
+                                    <img src="./images/product.jpg" />
+                                </a>
+                            </div>
+                            <div class="mui-slider-item">
+                                <a href="#">
+                                    <img src="./images/product.jpg" />
+                                </a>
+                            </div>
+                            <div class="mui-slider-item">
+                                <a href="#">
+                                    <img src="./images/product.jpg" />
+                                </a>
+                            </div>
+                        
+                            <div class="mui-slider-item mui-slider-item-duplicate">
+                                <a href="#">
+                                    <img src="./images/product.jpg" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product proName mui-ellipsis-2">
+                        阿迪达斯牛逼啊阿迪达斯碉堡了啊阿迪达斯无敌了阿迪达斯牛逼啊阿迪达斯碉堡了啊阿迪达斯无敌了阿迪达斯老吊了
+                    </div>
+                    <div class="product proPrice">
+                        价格：
+                        <b>&yen;499</b>
+                        <del>&yen;888.88</del>
+                    </div>
+                    <div class="product proSize">
+                        尺码：
+                        <span class="active">40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                        <span>40</span>
+                    </div>
+                    <div class="product proNum">
+                        数量：
+                        <div class="mui-numbox" data-numbox-min="1" data-numbox-max="9">
+                            <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                            <input id="test" class="mui-input-numbox" type="number" value="5">
+                            <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                        </div>&nbsp;剩余&nbsp;20件
+                    </div> -->
                 </div>
             </div>
         </div>
+
     </div>
-    <div class="lt_trade">
-        <a href="user/cart.html" class="mui-btn mui-btn-link">去购物车</a>
-        <div class="mui-pull-right">
-            <a href="javascript:;" class="mui-btn mui-btn-danger">加入购物车</a>
-            <a href="javascript:;" class="mui-btn mui-btn-warning">立即购买</a>
+    </div>
+    <!-- 底部 -->
+    <div class="lt_footer">
+        <div class="footBox">
+            <a href="javascript:;">
+                <span class="fa fa-shopping-cart"></span>
+            </a>
+            <a href="javascript:;">
+                <button class="mui-btn-red">加入购物车</button>
+            </a>
+
+            <a href="javascript:;">
+                <button class="mui-btn-green">立即购买</button>
+            </a>
         </div>
     </div>
-</div>
-<script type="text/template" id="detail">
-    <div class="mui-slider">
-        <div class="mui-slider-group mui-slider-loop">
-            <% if(!pic || pic.length == 0) {
-                pic = [{'picAddr':'/m/images/none.png'}];
-            } %>
-            <div class="mui-slider-item mui-slider-item-duplicate">
-                <a href="javascript:;"><img src="<%=pic[pic.length-1].picAddr%>" /></a>
-            </div>
-            <% for(var i = 0 ; i < pic.length ; i ++ ){ %>
-                <div class="mui-slider-item <%=i==0?'mui-active':''%>">
-                    <a href="javascript:;"><img src="<%=pic[i].picAddr%>" /></a>
+    </div>
+    <!-- 模板 -->
+    <script type="text/template" id="productListTemp">
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="<%=pic[pic.length-1].picAddr%>" />
+                    </a>
                 </div>
-            <% } %>
-            <div class="mui-slider-item mui-slider-item-duplicate">
-                <a href="javascript:;"><img src="<%=pic[0].picAddr%>" /></a>
+              
+                <%for(var i=0;i<pic.length;i++){%>
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="<%=pic[i].picAddr%>" />
+                        </a>
+                    </div>
+                <%}%>
+        
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="<%=pic[0].picAddr%>" />
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="mui-slider-indicator">
-            <% for(var i = 0 ; i < pic.length ; i ++ ){ %>
-            <div class="mui-indicator <%=i==0?'mui-active':''%>"></div>
-            <% } %>
+        <div class="product proName mui-ellipsis-2">
+            <%=proName%>
         </div>
-    </div>
-    <!--名称-->
-    <div class="lt_item">
-        <strong class="mui-ellipsis-2"><%=proName%></strong>
-    </div>
-    <!--价格-->
-    <div class="lt_item">
-        价格：
-        <span class="now">&yen;<%=price%></span> <del class="old">&yen;<%=oldPrice%></del>
-    </div>
-    <!--尺码-->
-    <div class="lt_item">
-        尺码：
-        <%
-            var arr = (size||'40-50').split('-');
-            var start = arr[0],end = arr[1];
-            for( var i = start ; i <= end ; i ++ ){
-        %>
-            <span class="size"><%=i%></span>
-        <% } %>
-    </div>
-    <!--数量-->
-    <div class="lt_item">
-        数量：
-        <div class="mui-numbox" data-numbox-min="1" data-numbox-max="<%=num%>">
-            <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
-            <input class="mui-input-numbox" type="number" value="1">
-            <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+        <div class="product proPrice">
+            价格：
+            <b>&yen;<%=price%></b>
+            <del>&yen;<%=oldPrice%></del>
         </div>
-        <span class="num">剩余数量：<%=num%> 双</span>
-    </div>
-    <!--描述-->
-    <div class="lt_item">
-        详情：<%=proDesc%></span>
-    </div>
-</script>
-<script src="assets/mui/js/mui.js"></script>
-<script src="assets/zepto/zepto.min.js"></script>
-<script src="assets/artTemplate/template-native.js"></script>
-<script src="js/common.js"></script>
-<script src="js/product.js"></script>
+        <div class="product proSize">
+            尺码：
+            <%
+                var numArr = size.split("-");
+                var start = numArr[0];
+                var end = numArr[1];
+                for(var i=start;i<=end;i++){%>
+                    <span class="<%=i==start?'active':''%>"><%=i%></span>
+             <% }
+            %>                
+        </div>
+        <div class="product proNum">
+            数量：
+            <div class="mui-numbox" data-numbox-min="1" data-numbox-max="<%=num%>">
+                <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                <input id="test" class="mui-input-numbox" type="number" value="1">
+                <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+            </div>&nbsp;剩余&nbsp;<%=num%>件
+        </div>
+    </script>
+    <script src="./assets/mui/js/mui.js"></script>
+    <script src="./assets/zepto/zepto.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
+    <script src="./js/letao-js/common.js"></script>
+    <script src="./js/letao-js/product.js"></script>
 </body>
+
 </html>

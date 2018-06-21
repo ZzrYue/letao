@@ -33,9 +33,9 @@
                         </ul>
                         <!-- 一级分类模板 -->
                         <script type="text/template" id="cateList">
-                            <%for(var i=0 ;i<rows.length;i++){%> 
-                                <li>
-                                    <a href="javascript:;" class="<%= i == 0 ?  'cate_active'  : '' %>" data-id="<%=rows[i].id%>">
+                            <%for(var i=0 ;i<rows.length;i++){%>
+                                <li class="<%= i == 0 ?  'cate_active'  : '' %>">
+                                    <a href="javascript:;" data-id="<%=rows[i].id%>">
                                         <%=rows[i].categoryName%>
                                     </a>
                                 </li>
@@ -47,56 +47,26 @@
             <div class="cate_right">
                 <div class="mui-scroll-wrapper">
                     <div class="mui-scroll">
-                        <ul>
-                            <li>
-                                <a href="">
-                                    <img src="./images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="./images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="./images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="./images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="./images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="./images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="./images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="./images/brand1.png" alt="">
-                                    <p>耐克</p>
-                                </a>
-                            </li>
+                        <ul class="cate_right_ul">
+
                         </ul>
+                        <!-- 二级分类 -->
+                        <script type="text/template" id="cateListTemp">
+                            <%if(rows.length==0){%>
+                                <span>没有任何数据</span>
+                               <% }else{%>
+                                <%for(var i=0;i<rows.length;i++){%>
+                                    <li data-id="<%=rows[i].categoryId%>">
+                                        <a href="javascript:;">
+                                            <img src="<%=rows[i].brandLogo%>" alt="">
+                                            <p>
+                                                <%=rows[i].brandName%>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <%}%>
+                           <% }%>
+                        </script>
                     </div>
                 </div>
             </div>

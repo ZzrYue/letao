@@ -1,0 +1,28 @@
+.lt_main{
+    >.lt_parent{
+        #OA_task_2{
+            .mui-media-body{
+                font-size:13px;
+                a{
+                    color:inherit;
+                    .cart_price{
+                        b{
+                            font-size:18px;
+                            color:#f00;
+                        }
+                        span{
+                            float: right;
+                            margin-right:30px;
+                        }
+                    }
+                    input{
+                        position: absolute;
+                        left:0;
+                        bottom:0;
+                    }
+                }
+                
+            }
+        }
+    }
+}

@@ -41,7 +41,7 @@
 
                             <!-- 排序 -->
                             <div class="oder_by">
-                                <a href="" class="active" data-para="time">上架时间
+                                <a href=""  data-para="time">上架时间
                                     <span class="fa fa-angle-down"></span>
                                 </a>
                                 <a href="" data-para="price">价格
@@ -111,12 +111,12 @@
     <script type="text/template" id="templateList">
         <%for(var i=0;i<data.length;i++){%>
             <li>
-                <a href="javascript:;">
+                <a href="./product.html?proId=<%=data[i].pic[0].id%>">
                     <%if(data[i].pic.length == 0){
                         data[i].pic.push({"picAddr":"/mobile/images/none.jpg"});
                     }%>
                     <img src="<%=data[i].pic[0].picAddr%>" alt="">
-                    <p class="mui-ellipsis-2"><%=data[i].pic[0].proName%></p>
+                    <p class="mui-ellipsis-2"><%=data[i].proName%></p>
                     <div>
                         <i>&yen;<%=data[i].price%></i>
                         <del>&yen;<%=data[i].oldPrice%> </del>

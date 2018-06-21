@@ -1,0 +1,51 @@
+.lt_main > .lt_parent .mui-scroll .product {
+  padding: 10px;
+  font-size: 13px;
+}
+
+.lt_main > .lt_parent .mui-scroll .proPrice b {
+  font-size: 18px;
+  color: #f00;
+}
+
+.lt_main > .lt_parent .mui-scroll .proSize span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.lt_main > .lt_parent .mui-scroll .proSize span.active {
+  background-color: #ff0;
+}
+
+.lt_footer > .footBox {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.lt_footer > .footBox > a {
+  line-height: 45px;
+  font-size: 25px;
+  color: #000;
+}
+
+.lt_footer > .footBox > a:nth-of-type(1) {
+  flex: 1;
+}
+
+.lt_footer > .footBox > a:nth-of-type(2), .lt_footer > .footBox > a:nth-of-type(3) {
+  flex: 2;
+}
+
+.lt_footer > .footBox > a:nth-of-type(2) > button, .lt_footer > .footBox > a:nth-of-type(3) > button {
+  padding: 8px 35px;
+  margin-top: 5px;
+}
+/*# sourceMappingURL=product.css.map */

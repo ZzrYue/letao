@@ -12,6 +12,7 @@
 
 .lt_main .cate_left ul > li {
   width: 100%;
+  border-right: 1px solid #ccc;
 }
 
 .lt_main .cate_left ul > li > a {
@@ -20,12 +21,12 @@
   line-height: 45px;
   display: block;
   text-align: center;
-  border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   color: #aaa;
+  color: inherit;
 }
 
-.lt_main .cate_left ul > li > a.cate_active {
+.lt_main .cate_left ul > li.cate_active {
   border-right: none;
   color: #f00;
   background-color: #fff;
