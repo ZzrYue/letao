@@ -6,8 +6,9 @@ $(function () {
     })
 
     // 获取url中的proId
-    var arr = location.search.slice(1).split("=")
-    var id = arr[1];
+      // 获取用户传入的产品id号
+    // lt.getParamter(location.search) == {"proId":4}
+    var id = lt_local.getData(location.search).proId;
 
     // 初始化下拉刷新组件
     mui.init({
@@ -37,7 +38,7 @@ $(function () {
             },
             dataType: "json",
             success: function (result) {
-                console.log(result);
+                // console.log(result);
                 var html = template("productListTemp", result);
                 $(".mui-scroll").html(html);
 
@@ -54,36 +55,44 @@ $(function () {
 
 
     // 尺码的选择
-    $(".mui-scroll").on("tap","span",function(){
+    $(".mui-scroll").on("tap", "span", function () {
         // console.log($(this))
         $(this).siblings().removeClass("active");
         $(this).addClass("active")
     })
 
     // 点击加入购物车事件
-    $(".mui-btn-red").on("tap",function(){
+    $(".mui-btn-red").on("tap", function () {
         // 获取参数
         var num = $(".mui-input-numbox").val();
         var size = $(".proSize > span.active").text();
-        var id = id;
-
+        // console.log(num,size,id)
         // 发送请求获取对应结果
         $.ajax({
-            type:"post",
-            url:"/cart/addCart",
-            data:{
-                "num":num,
-                "size":size,
-                "productId":id
+            type: "post",
+            url: "/cart/addCart",
+            data: {
+                "num": num,
+                "size": size,
+                "productId": id
             },
-            dataType:"json",
-            success:function(result){
+            dataType: "json",
+            success: function (result) {
                 console.log(result)
                 // 判断用户是否登录
-                if(result.success && result.success == true){
+                if (result.success && result.success == true) {
+                    if (result.error != 400) { //说明登录成功
+                        mui.confirm('去购物车看看，确认？', '加入购物车', ['是', '否'], function (e) {
+                            if (e.index == 0) {
+                                location.href = "./cart.html"
+                            }
+                        })
 
-                }else{
-                    location.href = "./login.html?redirectUrl="+location.href;
+                    }else{
+                        location.href = "./login.html?redirectUrl=" + location.href;
+                    }
+                } else {
+                    location.href = "./login.html?redirectUrl=" + location.href;
                 }
             }
         })

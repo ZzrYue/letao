@@ -10,7 +10,7 @@ $(function(){
 
     // 获取当前的url
     var currentUrl = location.search;
-    // console.log(currentUrl);
+    console.log(currentUrl);
     
     // 输入信息点击“确认”的事件
     $(".mui-btn-primary").on("tap",function(){
@@ -35,7 +35,7 @@ $(function(){
                     // 调用获取url函数
                     if(currentUrl.indexOf("?redirectUrl") == 0){
                         // 跳到来源页
-                        location.href = location.href.replace("?redirectUrl","")
+                        location.href = location.search.replace("?redirectUrl=","")
                     }else{
                         // 跳回首页
                         location.href = "./index.html"

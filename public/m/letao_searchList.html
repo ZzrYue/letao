@@ -21,7 +21,7 @@
         <!-- 头部 -->
         <div class="lt_header">
             <span class="lt_hleft  fa fa-arrow-left"></span>
-            <div class="lt_hcenter">乐淘云购</div>
+            <div class="lt_hcenter">搜索列表</div>
             <span class="lt_hright"></span>
         </div>
         <!-- 主体 -->
@@ -111,7 +111,7 @@
     <script type="text/template" id="templateList">
         <%for(var i=0;i<data.length;i++){%>
             <li>
-                <a href="./product.html?proId=<%=data[i].pic[0].id%>">
+                <a href="./product.html?proId=<%=data[i].id%>">
                     <%if(data[i].pic.length == 0){
                         data[i].pic.push({"picAddr":"/mobile/images/none.jpg"});
                     }%>

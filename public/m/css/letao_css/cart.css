@@ -21,4 +21,18 @@
   left: 0;
   bottom: 0;
 }
+
+.proSize span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.proSize span.active {
+  background-color: #ff0;
+}
 /*# sourceMappingURL=cart.css.map */

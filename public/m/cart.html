@@ -20,8 +20,8 @@
     <div class="layout">
         <!-- 头部 -->
         <div class="lt_header">
-            <span class="lt_hleft"></span>
-            <div class="lt_hcenter">乐淘云购</div>
+            <span class="lt_hleft fa fa-arrow-left" onclick="history.back()"></span>
+            <div class="lt_hcenter">哇瑟，购物车</div>
             <span class="lt_hright fa fa-search"></span>
         </div>
         <div class="lt_main">
@@ -29,7 +29,7 @@
                 <div class="mui-scroll-wrapper">
                     <div class="mui-scroll">
                         <ul id="OA_task_2" class="mui-table-view">
-                            <li class="mui-table-view-cell">
+                            <!-- <li class="mui-table-view-cell">
                                 <div class="mui-slider-right mui-disabled">
                                     <a class="mui-btn mui-btn-yellow">编辑</a>
                                     <a class="mui-btn mui-btn-red">删除</a>
@@ -49,7 +49,8 @@
                                         </div>
                                     </a>
                                 </div>
-                            </li>
+                            </li> -->
+
                         </ul>
 
 
@@ -87,10 +88,73 @@
             </ul>
         </div>
     </div>
+
+    <!-- 模板  渲染页面-->
+    <script type="text/template" id="cartListTemp">
+        <%for(var i=0;i<items.length;i++){%>
+            
+                <li class="mui-table-view-cell">
+                    <div class="mui-slider-right mui-disabled">
+                        <a class="mui-btn mui-btn-yellow" data-productSize="<%=items[i].productSize%>" data-productNum="<%=items[i].productNum%>" 
+                            data-size="<%=items[i].size%>" data-num="<%=items[i].num%>" data-id="<%=items[i].id%>">编辑</a>
+                        <a class="mui-btn mui-btn-red" data-id="<%=items[i].id%>">删除</a>
+                    </div>
+                    <div class="mui-slider-handle">
+                        <a class="mui-navigate-right">
+                            <img class="mui-media-object mui-pull-left" src="<%=items[i].pic[0].picAddr%>">
+                            <div class="mui-media-body">
+                                <div class="mui-ellipsis-2">
+                                    <%=items[i].proName%>
+                                </div>
+                                <div class="cart_price">
+                                    <b>&yen;
+                                        <%=items[i].price%>
+                                    </b>
+                                    <del>&yen;
+                                        <%=items[i].oldPrice%>
+                                    </del>
+                                    <span class="editNum">x
+                                        <%=items[i].num%>双</span>
+                                </div>
+                                <div class="editSize">鞋码:
+                                    <%=items[i].size%>
+                                        <div>
+                                            <input type="checkbox">
+                                        </div>
+                        </a>
+                        </div>
+                </li>
+               
+            <%}%>
+    </script>
+
+     <!-- 模板  编辑购物车{productsize: "35-45", productnum: "20", size: "45", num: "2", id: "2"} -->
+     <script type="text/template" id="editListTEmp">
+        <div class="product proSize">
+            尺码：
+            <%
+                var numArr = productsize.split("-");
+                var start = numArr[0];
+                var end = numArr[1];
+                for(var i=start;i<=end;i++){%>
+                    <span class="<%=i==size?'active':''%>"><%=i%></span>
+             <% }
+            %>                
+        </div>
+        <div class="product proNum">
+            数量：
+            <div class="mui-numbox" data-numbox-min="1" data-numbox-max="<%=productnum%>">
+                <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                <input id="test" class="mui-input-numbox" type="number" value="<%=num%>">
+                <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+            </div>&nbsp;剩余&nbsp;<%=productnum%>件
+        </div>
+    </script>
     <script src="./assets/mui/js/mui.js"></script>
     <script src="./assets/zepto/zepto.min.js"></script>
+    <script src="./assets/artTemplate/template-native.js"></script>
     <script src="./js/letao-js/common.js"></script>
-    <!-- <script src="./js/letao-js/index.js"></script> -->
+    <script src="./js/letao-js/cart.js"></script>
 </body>
 
 </html>
